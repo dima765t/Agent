@@ -1,0 +1,265 @@
+# AI Website Funnel Agent System
+
+## Project Goal
+
+Build an AI-powered multi-agent system that helps manage the full website-building funnel for small business clients.
+
+The system should support the workflow from first client contact until website launch and ongoing maintenance.
+
+## Workflow Stages
+
+1. Discovery
+2. Proposal
+3. Planning
+4. Design
+5. Development
+6. Launch
+7. Maintenance
+
+## Main Idea
+
+Each stage of the funnel will be handled by a dedicated AI agent.
+
+The agents should work together to collect client information, define the project scope, generate a proposal, plan the website structure, assist with design direction, support development tasks, prepare launch checks, and manage post-launch maintenance.
+
+## Agents
+
+### 1. Discovery Agent
+
+Responsible for understanding the potential client.
+
+Tasks:
+- Ask intro questions
+- Understand the business
+- Identify goals
+- Define target audience
+- Identify needed pages and features
+- Discuss budget and timeline
+- Decide whether the client is a good fit
+
+Output:
+- Discovery summary
+- Client profile
+- Initial project needs
+- Fit score
+
+---
+
+### 2. Proposal Agent
+
+Responsible for turning the discovery information into a clear offer.
+
+Tasks:
+- Define scope of work
+- Define deliverables
+- Create timeline
+- Suggest price
+- Define payment terms
+- Suggest optional add-ons
+
+Possible add-ons:
+- Copywriting
+- SEO
+- Booking forms
+- Blog
+- Multilingual support
+- Analytics setup
+
+Output:
+- Client proposal
+- Price estimate
+- Timeline
+- Optional upsells
+
+---
+
+### 3. Planning Agent
+
+Responsible for creating the project structure before design starts.
+
+Tasks:
+- Create sitemap
+- Define page hierarchy
+- List required content from client
+- Recommend technical setup
+- Discuss domain and hosting
+- List required assets and credentials
+
+Required client materials:
+- Logo
+- Text
+- Images
+- Legal pages
+- Domain access
+- Hosting access
+- Analytics access if relevant
+
+Output:
+- Sitemap
+- Project checklist
+- Content checklist
+- Technical setup plan
+
+---
+
+### 4. Design Agent
+
+Responsible for shaping the website visually.
+
+Tasks:
+- Suggest design style
+- Suggest colors and typography
+- Define components
+- Create wireframe direction
+- Plan homepage layout
+- Plan inner page layouts
+- Prepare revision notes
+
+Output:
+- Design brief
+- Homepage layout plan
+- Inner page layout plan
+- Style guide
+
+---
+
+### 5. Development Agent
+
+Responsible for converting the approved design into a working website.
+
+Tasks:
+- Generate development tasks
+- Build page structure
+- Ensure mobile responsiveness
+- Add forms and integrations
+- Add basic SEO setup
+- Optimize speed
+- Upload content
+- Connect analytics if included
+
+Output:
+- Development task list
+- Code structure recommendation
+- SEO checklist
+- Integration checklist
+
+---
+
+### 6. Launch Agent
+
+Responsible for moving the website from draft to live.
+
+Tasks:
+- Run final QA
+- Check desktop, mobile, and tablet
+- Test forms
+- Fix bugs
+- Connect domain
+- Check SSL/security basics
+- Prepare final approval checklist
+
+Output:
+- Launch checklist
+- QA report
+- Go-live confirmation list
+
+---
+
+### 7. Maintenance Agent
+
+Responsible for post-launch support.
+
+Tasks:
+- Manage content edits
+- Track technical fixes
+- Monitor uptime/security
+- Manage backups
+- Suggest monthly improvements
+- Track optional recurring services
+
+Output:
+- Maintenance plan
+- Monthly checklist
+- Improvement suggestions
+
+## Suggested Data Flow
+
+Discovery Agent 
+→ Proposal Agent 
+→ Planning Agent 
+→ Design Agent 
+→ Development Agent 
+→ Launch Agent 
+→ Maintenance Agent
+
+Each agent should receive the previous agent’s output and produce a structured result.
+
+## Suggested MVP
+
+The first version should be simple and run locally.
+
+MVP features:
+- CLI-based interaction
+- One command to start a new client project
+- Store client/project data in JSON or Markdown
+- Generate structured outputs for each funnel stage
+- Allow exporting a proposal as Markdown
+- Allow exporting checklists as Markdown
+
+## Future Features
+
+- Web dashboard
+- Client portal
+- PDF proposal export
+- CRM integration
+- Email automation
+- Google Drive integration
+- Calendar integration
+- Pricing calculator
+- Website brief generator
+- Maintenance subscription tracker
+
+## Tech Stack
+
+Suggested stack:
+- Python
+- OpenAI / Claude API
+- Markdown files for outputs
+- JSON for project state
+- Optional later: FastAPI or Flask
+- Optional later: React dashboard
+
+## Repository Structure
+
+```text
+ai-website-funnel-agent/
+│
+├── README.md
+├── agents/
+│   ├── discovery_agent.py
+│   ├── proposal_agent.py
+│   ├── planning_agent.py
+│   ├── design_agent.py
+│   ├── development_agent.py
+│   ├── launch_agent.py
+│   └── maintenance_agent.py
+│
+├── data/
+│   └── projects/
+│
+├── outputs/
+│   ├── proposals/
+│   ├── checklists/
+│   └── briefs/
+│
+├── prompts/
+│   ├── discovery_prompt.md
+│   ├── proposal_prompt.md
+│   ├── planning_prompt.md
+│   ├── design_prompt.md
+│   ├── development_prompt.md
+│   ├── launch_prompt.md
+│   └── maintenance_prompt.md
+│
+├── main.py
+└── requirements.txt
