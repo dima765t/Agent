@@ -1,0 +1,7 @@
+# MVP runs on the Python standard library only -- no install needed.
+#
+# Uncomment the SDK you plan to use when wiring a real model into
+# llm/client.py (see AnthropicLLMClient there):
+#
+# anthropic>=0.39.0
+# openai>=1.40.0
