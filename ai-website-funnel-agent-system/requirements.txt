@@ -1,7 +1,9 @@
-# MVP runs on the Python standard library only -- no install needed.
+# Runtime dependencies.
 #
-# Uncomment the SDK you plan to use when wiring a real model into
-# llm/client.py (see AnthropicLLMClient there):
-#
-# anthropic>=0.39.0
-# openai>=1.40.0
+# python-dotenv loads ANTHROPIC_API_KEY (and friends) from a local .env file.
+# anthropic is the official SDK used by the Discovery agent to call Claude.
+# If the key is absent or the API call fails, the agent falls back to the
+# deterministic mock output, so the project still runs without network.
+
+python-dotenv>=1.0.0
+anthropic>=0.39.0
